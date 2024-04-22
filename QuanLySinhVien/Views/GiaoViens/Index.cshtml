@@ -1,0 +1,100 @@
+﻿@model IEnumerable<QuanLySinhVien.Models.GiaoVien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-bottom: 16px;">Tất cả Giáo viên</h1>
+
+<p class="button">
+    <a style="text-decoration: none; color: white;" asp-action="Create">Thêm Giảng viên mới</a>
+</p>
+
+<table class="table" style="margin-top: 12px;">
+    <thead>
+        <tr>
+            <th>
+                Mã giáo viên
+            </th>
+            <th>
+                Họ tên
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                SĐT
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Chức vụ
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td style="text-align:center;">
+                @Html.DisplayFor(modelItem => item.Magv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotengv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dob)
+            </td>
+            <td>
+                    @if ((bool)item.Gioitinh)
+                    {
+                        <text>Nam</text>
+                    }
+                    else
+                    {
+                        <text>Nữ</text>
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chucvu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Magv" class="a_as_btn" style="background-color: #2c7bfd">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Magv" class="a_as_btn">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Magv" class="a_as_btn" style="background-color: #dc3545">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

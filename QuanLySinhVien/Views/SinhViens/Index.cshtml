@@ -1,0 +1,106 @@
+﻿@model IEnumerable<QuanLySinhVien.Models.SinhVien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tất cả Sinh viên</h1>
+
+<p class="button">
+    <a style="text-decoration: none; color: white;" asp-action="Create">Thêm Sinh viên mới</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã SV
+            </th>
+            <th>
+                Họ
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Nơi sinh
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                SĐT
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                CMND
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Dân tộc
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Masv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noisinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scmnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dantoc)
+            </td>
+            <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Masv" class="a_as_btn" style="background-color: #2c7bfd">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Masv" class="a_as_btn">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Masv" class="a_as_btn" style="background-color: #dc3545">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
