@@ -1,6 +1,5 @@
-<div align="center">
-  <b style="font-size:100px;">Quản lý sinh viên</b>
-</div>
+**<p align="center"><span style="font-size: larger;">Quản lý sinh viên</span></p>**
+
 
 ![Homepage](https://raw.githubusercontent.com/PVL2610/BTTH_21/master/screenshot/screenshot1.jpg)
 ![teacher](https://raw.githubusercontent.com/PVL2610/BTTH_21/master/screenshot/screenshot2.jpg)
